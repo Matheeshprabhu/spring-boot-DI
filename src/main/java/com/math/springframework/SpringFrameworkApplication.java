@@ -1,9 +1,6 @@
 package com.math.springframework;
 
-import com.math.springframework.controllers.ConstructorInjector;
-import com.math.springframework.controllers.PrimaryController;
-import com.math.springframework.controllers.PropertyInjector;
-import com.math.springframework.controllers.SetterInjector;
+import com.math.springframework.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -37,6 +34,10 @@ public class SpringFrameworkApplication {
 		PrimaryController primaryController = (PrimaryController) ctx.getBean("primaryController");
 
 		System.out.println(primaryController.getGreeting());
+
+		I8NController i8NController = (I8NController) ctx.getBean("i8NController");
+
+		System.out.println(i8NController.getGreeting());
 	}
 
 }
