@@ -1,6 +1,6 @@
 package com.math.springframework.services;
 
-public interface GreetingService {
+public interface Greeting {
 
     public String getGreeting();
 }

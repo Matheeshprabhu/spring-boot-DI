@@ -1,6 +1,6 @@
 package com.math.springframework.controllers;
 
-import com.math.springframework.services.GreetingService;
+import com.math.springframework.services.Greeting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyInjector {
 
-    @Qualifier("propertyGreetingServiceService")
+    @Qualifier("propertyGreetingService")
     @Autowired
-    public GreetingService greetingService;
+    public Greeting greeting;
 
     public String getGreeting(){
-        return greetingService.getGreeting();
+        return greeting.getGreeting();
     }
 
 }
