@@ -3,10 +3,10 @@ package com.math.springframework.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SetterGreetingService implements Greeting{
+public class ConstructorGreetingServiceService implements GreetingService {
 
     @Override
     public String getGreeting() {
-        return "Hello World! - Setter";
+        return "Hello World! - Constructor";
     }
 }

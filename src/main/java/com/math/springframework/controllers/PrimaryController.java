@@ -1,18 +1,18 @@
 package com.math.springframework.controllers;
 
-import com.math.springframework.services.Greeting;
+import com.math.springframework.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class PrimaryController {
 
-    private final Greeting greeting;
+    private final GreetingService greetingService;
 
-    public PrimaryController(Greeting greeting) {
-        this.greeting = greeting;
+    public PrimaryController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String getGreeting(){
-        return greeting.getGreeting();
+        return greetingService.getGreeting();
     }
 }
