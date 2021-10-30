@@ -3,7 +3,7 @@ package com.math.springframework.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("JP")
+@Profile({"JP", "default"})
 @Service("i8NGreeting")
 public class I8NGreetintServiceJapanese implements Greeting {
 
