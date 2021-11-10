@@ -1,5 +1,7 @@
 package com.math.springframework.config;
 
+import com.math.springframework.repositories.EnglishGreetingRepository;
+import com.math.springframework.repositories.EnglishGreetingRepositoryImpl;
 import com.math.springframework.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,14 +34,19 @@ public class GreetingServiceConfig {
 
     @Profile("EN")
     @Bean
-    I8NGreetingServiceEnglish i8NGreeting(){
-        return new I8NGreetingServiceEnglish();
+    I8NGreetingServiceEnglish i8NGreeting(EnglishGreetingRepositoryImpl englishGreetingRepository){
+        return new I8NGreetingServiceEnglish(englishGreetingRepository);
     }
 
     @Profile({"JP","default"})
     @Bean("i8NGreeting")
     I8NGreetintServiceJapanese i8NGreetintServiceJapanese(){
         return new I8NGreetintServiceJapanese();
+    }
+
+    @Bean
+    EnglishGreetingRepositoryImpl englishGreetingRepositoryImpl(){
+        return new EnglishGreetingRepositoryImpl();
     }
 
 
