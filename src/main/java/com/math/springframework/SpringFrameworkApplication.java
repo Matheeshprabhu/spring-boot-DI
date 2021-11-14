@@ -1,5 +1,6 @@
 package com.math.springframework;
 
+import com.math.springframework.config.ConstructorPropertiesConfig;
 import com.math.springframework.config.PropertiesConfig;
 import com.math.springframework.controllers.*;
 import com.math.springframework.prop.Property;
@@ -52,6 +53,14 @@ public class SpringFrameworkApplication {
 		System.out.println(propertiesConfig.getUsername());
 		System.out.println(propertiesConfig.getPassword());
 		System.out.println(propertiesConfig.getPermission());
+
+		System.out.println("-----------Constructor Properties binding--------------");
+
+		ConstructorPropertiesConfig constructorPropertiesConfig = ctx.getBean(ConstructorPropertiesConfig.class);
+
+		System.out.println(constructorPropertiesConfig.getUsername());
+		System.out.println(constructorPropertiesConfig.getPassword());
+		System.out.println(constructorPropertiesConfig.getPermission());
 	}
 
 }

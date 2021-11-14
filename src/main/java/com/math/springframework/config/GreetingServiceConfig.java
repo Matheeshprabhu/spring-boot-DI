@@ -4,9 +4,11 @@ import com.math.springframework.prop.Property;
 import com.math.springframework.repositories.EnglishGreetingRepositoryImpl;
 import com.math.springframework.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
 @Configuration
+@EnableConfigurationProperties(ConstructorPropertiesConfig.class)
 public class GreetingServiceConfig {
 
     @Bean
