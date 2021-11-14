@@ -1,16 +1,26 @@
 package com.math.springframework.config;
 
-import com.math.springframework.repositories.EnglishGreetingRepository;
+import com.math.springframework.prop.Property;
 import com.math.springframework.repositories.EnglishGreetingRepositoryImpl;
 import com.math.springframework.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@PropertySource("classpath:dummydata.properties")
 public class GreetingServiceConfig {
 
+    @Bean
+    Property property(@Value("${math.username}") String name,
+                      @Value("${math.password}")  String password,
+                      @Value("${math.permission}")  String permission){
+        Property property = new Property();
+        property.setName(name);
+        property.setPassword(password);
+        property.setPermission(permission);
+
+        return property;
+    }
     @Bean
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();

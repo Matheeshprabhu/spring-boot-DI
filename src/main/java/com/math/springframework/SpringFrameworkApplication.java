@@ -1,6 +1,7 @@
 package com.math.springframework;
 
 import com.math.springframework.controllers.*;
+import com.math.springframework.prop.Property;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -38,6 +39,10 @@ public class SpringFrameworkApplication {
 		I8NController i8NController = (I8NController) ctx.getBean("i8NController");
 
 		System.out.println(i8NController.getGreeting());
+
+		Property property = (Property) ctx.getBean("property");
+
+		System.out.println(property.getName() + "-" + property.getPassword() + "-" + property.getPermission());
 	}
 
 }
